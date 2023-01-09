@@ -1,0 +1,30 @@
+.board__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board__square {
+  display: flex;
+  flex-direction: column;
+}
+.board__row {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+}
+.board__row.two {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.board__column {
+  flex: 1 1;
+  /* background-color: green; */
+}
+.board__column canvas {
+  height: 100%;
+  width: 100%;
+}
+.board__column.two {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
