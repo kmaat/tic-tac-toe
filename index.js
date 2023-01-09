@@ -170,14 +170,14 @@ function checkBoardState() {
         return "draw";
     }
     if(
-    boardMapO[0] && boardMapO[1] && boardMapO[2] ||
-    boardMapO[3] && boardMapO[4] && boardMapO[5] ||
-    boardMapO[6] && boardMapO[7] && boardMapO[8] ||
-    boardMapO[0] && boardMapO[3] && boardMapO[6] ||
-    boardMapO[1] && boardMapO[4] && boardMapO[7] ||
-    boardMapO[2] && boardMapO[5] && boardMapO[8] ||
-    boardMapO[0] && boardMapO[4] && boardMapO[8] ||
-    boardMapO[6] && boardMapO[4] && boardMapO[2]
+        boardMapO[0] && boardMapO[1] && boardMapO[2] ||
+        boardMapO[3] && boardMapO[4] && boardMapO[5] ||
+        boardMapO[6] && boardMapO[7] && boardMapO[8] ||
+        boardMapO[0] && boardMapO[3] && boardMapO[6] ||
+        boardMapO[1] && boardMapO[4] && boardMapO[7] ||
+        boardMapO[2] && boardMapO[5] && boardMapO[8] ||
+        boardMapO[0] && boardMapO[4] && boardMapO[8] ||
+        boardMapO[6] && boardMapO[4] && boardMapO[2]
     ) {
         resultsDiv.innerHTML = "O wins";
         return "win";
