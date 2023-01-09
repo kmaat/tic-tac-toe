@@ -154,7 +154,18 @@ function getRandomInt(min, max) {
 
 function checkBoardState() {
     let resultsDiv = document.getElementsByClassName("board__results")[0];
-    if(!false in boardMap) {
+
+    if(
+        boardMap[0] &&
+        boardMap[1] &&
+        boardMap[2] &&
+        boardMap[3] &&
+        boardMap[4] &&
+        boardMap[5] &&
+        boardMap[6] &&
+        boardMap[7] &&
+        boardMap[8]
+    ) {
         resultsDiv.innerHTML = "Draw";
         return "draw";
     }
