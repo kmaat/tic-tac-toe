@@ -197,11 +197,21 @@ const winningCombinations = [
   }
 
   // If all else fails, make a random move
-  for (let i = 0; i < 9; i++) {
-    if (!boardMap[i]) {
-      return i;
+    let availableSquares = [];
+    for(let square in boardMap) {
+        if(!boardMap[square]){
+            availableSquares.push(square);
+        }
     }
-  }
+
+    let selectedSquare = getRandomInt(0, availableSquares.length - 1);
+    return availableSquares[selectedSquare];
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function checkBoardState() {
