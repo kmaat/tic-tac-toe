@@ -12,19 +12,36 @@
     <div class="board__container">
         <div class="board__square">
             <div class="board__row one">
-                <div class="board__column one" id="0" onclick="selectSquare(event)"></div>
-                <div class="board__column two" id="1" onclick="selectSquare(event)"></div>
-                <div class="board__column three" id="2" onclick="selectSquare(event)"></div>
+                <div class="board__column one" id="0" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas one"></canvas>
+                </div>
+                <div class="board__column two" id="1" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas two"></canvas>
+                </div>
+                <div class="board__column three" id="2" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas three"></canvas>
+                </div>
             </div>
             <div class="board__row two">
-                <div class="board__column one" id="3" onclick="selectSquare(event)"></div>
-                <div class="board__column two" id="4" onclick="selectSquare(event)"></div>
-                <div class="board__column three" id="5" onclick="selectSquare(event)"></div>
+                <div class="board__column one" id="3" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas four"></canvas>
+                </div>
+                <div class="board__column two" id="4" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas five"></canvas>
+                </div>
+                <div class="board__column three" id="5" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas six"></canvas>
+                </div>
             </div>
             <div class="board__row three">
-                <div class="board__column one" id="6" onclick="selectSquare(event)"></div>
-                <div class="board__column two" id="7" onclick="selectSquare(event)"></div>
-                <div class="board__column three" id="8" onclick="selectSquare(event)"></div>
+                <div class="board__column one" id="6" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas seven"></canvas>
+                </div>
+                <div class="board__column two" id="7" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas eight"></canvas>                </div>
+                <div class="board__column three" id="8" onclick="selectSquare(event)">
+                    <canvas width="200px" height="200px" class="board__canvas nine"></canvas>
+                </div>
             </div>
         </div>
         <div class="board__results"></div>

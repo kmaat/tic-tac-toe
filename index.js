@@ -21,7 +21,10 @@ function initBoard() {
     isGameOver = false;
     document.getElementsByClassName("board__results")[0].innerHTML = "";
     for(let square in boardMap) {
-        document.getElementById(square).innerHTML = " ";
+        let div = document.getElementById(square);
+        let canvas = div.children[0];
+        let context = canvas.getContext("2d");
+        context.clearRect(0, 0, canvas.width, canvas.height);
     }
     boardMap = {
         0: false,
@@ -87,11 +90,6 @@ function selectSquare(event) {
 }
 
 function drawSquare(div) {
-    div.innerHTML=`<canvas 
-        width="${div.clientWidth}" 
-        height="${div.clientHeight}" 
-        style="z-index:-1;position:relative;width:100%;height:100%;" 
-    /canvas>`;
     let canvas = div.children[0];
     let context = canvas.getContext("2d");
     context.lineWidth = 3;
@@ -203,7 +201,6 @@ const winningCombinations = [
             availableSquares.push(square);
         }
     }
-
     let selectedSquare = getRandomInt(0, availableSquares.length - 1);
     return availableSquares[selectedSquare];
 }
