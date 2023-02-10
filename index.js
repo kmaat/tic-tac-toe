@@ -19,6 +19,7 @@ function initBoard() {
     isNextMarkCircle = true;
     isUserTurn = true;
     isGameOver = false;
+    document.getElementsByClassName("board__results")[0].innerHTML = "";
     for(let square in boardMap) {
         document.getElementById(square).innerHTML = " ";
     }
