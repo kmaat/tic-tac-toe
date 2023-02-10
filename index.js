@@ -19,7 +19,7 @@ function initBoard() {
     isNextMarkCircle = true;
     isUserTurn = true;
     isGameOver = false;
-    document.getElementsByClassName("board__results")[0].innerHTML = "";
+    document.getElementsByClassName("results__display")[0].innerHTML = "";
     for(let square in boardMap) {
         let div = document.getElementById(square);
         let canvas = div.children[0];
@@ -212,7 +212,7 @@ function getRandomInt(min, max) {
 }
 
 function checkBoardState() {
-    let resultsDiv = document.getElementsByClassName("board__results")[0];
+    let resultsDiv = document.getElementsByClassName("results__display")[0];
 
     if(
         boardMap[0] &&
