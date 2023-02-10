@@ -136,20 +136,71 @@ async function executeComputerMove() {
 }
 
 function calculateMove() {
-    let availableSquares = [];
-    for(let square in boardMap) {
-        if(!boardMap[square]){
-            availableSquares.push(square);
-        }
-    }
-    let selectedSquare = getRandomInt(0, availableSquares.length - 1);
-    return availableSquares[selectedSquare];
-}
+// Define the winning combinations
+const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  // Check if there is a winning move for the computer (O)
+  for (let i = 0; i < winningCombinations.length; i++) {
+    const [a, b, c] = winningCombinations[i];
+    if (boardMapX[a] && boardMapX[b] && !boardMap[c]) {
+      return c;
+    }
+    if (boardMapX[a] && !boardMap[b] && boardMapX[c]) {
+      return b;
+    }
+    if (!boardMap[a] && boardMapX[b] && boardMapX[c]) {
+      return a;
+    }
+  }
+
+  // Check if there is a winning move for the player (X)
+  for (let i = 0; i < winningCombinations.length; i++) {
+    const [a, b, c] = winningCombinations[i];
+    if (boardMapO[a] && boardMapO[b] && !boardMap[c]) {
+      return c;
+    }
+    if (boardMapO[a] && !boardMap[b] && boardMapO[c]) {
+      return b;
+    }
+    if (!boardMap[a] && boardMapO[b] && boardMapO[c]) {
+      return a;
+    }
+  }
+
+  // Check if the center square is available
+  if (!boardMap[4]) {
+    return 4;
+  }
+
+  // Check the corners
+  if (!boardMap[0]) {
+    return 0;
+  }
+  if (!boardMap[2]) {
+    return 2;
+  }
+  if (!boardMap[6]) {
+    return 6;
+  }
+  if (!boardMap[8]) {
+    return 8;
+  }
+
+  // If all else fails, make a random move
+  for (let i = 0; i < 9; i++) {
+    if (!boardMap[i]) {
+      return i;
+    }
+  }
 }
 
 function checkBoardState() {
